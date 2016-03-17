@@ -1,4 +1,4 @@
-POST /api/2.0/tenders/4d12e387528c4e6dae9943f80282931e/awards?acc_token=43021f76852b4959addf56f08219257c HTTP/1.0
+POST /api/2.0/tenders/e2337cadc0df4f33a2d89f388e6d4aed/awards?acc_token=aef93e50524a4890afa67b8d6e8e22d4 HTTP/1.0
 Authorization: Basic YnJva2VyOg==
 Content-Length: 1284
 Content-Type: application/json
@@ -42,12 +42,12 @@ Host: api-sandbox.openprocurement.org
 
 Response: 201 Created
 Content-Type: application/json; charset=UTF-8
-Location: http://api-sandbox.openprocurement.org/api/2.0/tenders/4d12e387528c4e6dae9943f80282931e/awards/893aeec019d948839729b6c410b588af
+Location: http://api-sandbox.openprocurement.org/api/2.0/tenders/e2337cadc0df4f33a2d89f388e6d4aed/awards/7abb52746b5f472ead49e46a7621b2f8
 {
   "data": {
     "status": "pending", 
     "complaintPeriod": {
-      "startDate": "2016-03-16T13:04:48.879920+02:00"
+      "startDate": "2016-03-17T09:44:15.890768+02:00"
     }, 
     "suppliers": [
       {
@@ -77,8 +77,8 @@ Location: http://api-sandbox.openprocurement.org/api/2.0/tenders/4d12e387528c4e6
       "amount": 475000.0, 
       "valueAddedTaxIncluded": true
     }, 
-    "date": "2016-03-16T13:04:48.878304+02:00", 
-    "id": "893aeec019d948839729b6c410b588af"
+    "date": "2016-03-17T09:44:15.889373+02:00", 
+    "id": "7abb52746b5f472ead49e46a7621b2f8"
   }
 }
 

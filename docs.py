@@ -2,11 +2,13 @@
 import json
 import os
 from copy import deepcopy
+from datetime import timedelta, datetime
 
 import openprocurement.tender.limited.tests.base as base_test
 from openprocurement.api.tests.base import PrefixedRequestClass
 from openprocurement.tender.limited.tests.tender import BaseTenderWebTest
 from webtest import TestApp
+from openprocurement.api.models import get_now
 
 test_tender_data = {
         "dateModified": "2016-01-14T16:48:35.636859+02:00",
@@ -291,16 +293,19 @@ class TenderLimitedResourceTest(BaseTenderWebTest):
 
         ####  Set contract value
 
-        # tender = self.db.get(self.tender_id)
-        # for i in tender.get('awards', []):
-        #     i['complaintPeriod']['endDate'] = i['complaintPeriod']['startDate']
-        # self.db.save(tender)
-
         with open('docs/source/tutorial/tender-contract-set-contract-value.http', 'w') as self.app.file_obj:
             response = self.app.patch_json('/tenders/{}/contracts/{}?acc_token={}'.format(
                 self.tender_id, self.contract_id, owner_token), {"data": {"value": {"amount": 238}}})
         self.assertEqual(response.status, '200 OK')
         self.assertEqual(response.json['data']['value']['amount'], 238)
+
+        #### Setting contract period
+
+        period_dates = {"period": {"startDate": get_now().isoformat(), "endDate": (get_now() + timedelta(days=365)).isoformat()}}
+        with open('docs/source/tutorial/tender-contract-period.http', 'w') as self.app.file_obj:
+            response = self.app.patch_json('/tenders/{}/contracts/{}?acc_token={}'.format(
+                self.tender_id, self.contract_id, owner_token), {'data': {'period': period_dates["period"]}})
+            self.assertEqual(response.status, '200 OK')
 
         #### Uploading Contract documentation
         #

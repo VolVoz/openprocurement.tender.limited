@@ -174,6 +174,14 @@ By default contract value is set based on the award, but there is a possibility 
 
 `200 OK` response was returned. The value was modified successfully.
 
+Set contract validity period
+----------------------------
+
+Setting contract validity period is optional, but if it is needed, you can set appropriate `startDate` and `endDate`.
+
+.. include:: tutorial/tender-contract-period.http
+   :code:
+
 Uploading contract documentation
 --------------------------------
 

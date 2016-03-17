@@ -1,12 +1,15 @@
-PATCH /api/2.0/tenders/2fc899fc534a4403ad9f4cfeb3cd2978/contracts/85803e1ec7d84d1389aac86557c80d55?acc_token=43f372e70a8b4470914dcaefd86af95e HTTP/1.0
+PATCH /api/2.0/tenders/516c3fb3a7cd4094bd38ec7c81c59a25/contracts/560d90d290b54d1a8f7b015bccc1f9ec?acc_token=e9444f5c71f340eea46d968d0fe83272 HTTP/1.0
 Authorization: Basic YnJva2VyOg==
-Content-Length: 30
+Content-Length: 118
 Content-Type: application/json
 Host: api-sandbox.openprocurement.org
 
 {
   "data": {
-    "status": "active"
+    "period": {
+      "startDate": "2016-03-17T09:44:10.711720+02:00", 
+      "endDate": "2017-03-17T09:44:10.711767+02:00"
+    }
   }
 }
 
@@ -14,9 +17,15 @@ Response: 200 OK
 Content-Type: application/json; charset=UTF-8
 {
   "data": {
-    "status": "active", 
+    "status": "pending", 
     "items": [
       {
+        "description": "Послуги шкільних їдалень", 
+        "classification": {
+          "scheme": "CPV", 
+          "description": "Послуги з харчування у школах", 
+          "id": "55523100-3"
+        }, 
         "additionalClassifications": [
           {
             "scheme": "ДКПП", 
@@ -25,12 +34,11 @@ Content-Type: application/json; charset=UTF-8
           }
         ], 
         "id": "2dc54675d6364e2baffbc0f8e74432ac", 
-        "classification": {
-          "scheme": "CPV", 
-          "description": "Послуги з харчування у школах", 
-          "id": "55523100-3"
+        "unit": {
+          "code": "MON", 
+          "name": "month"
         }, 
-        "description": "Послуги шкільних їдалень"
+        "quantity": 9
       }
     ], 
     "suppliers": [
@@ -56,13 +64,17 @@ Content-Type: application/json; charset=UTF-8
         }
       }
     ], 
+    "period": {
+      "startDate": "2016-03-17T09:44:10.711720+02:00", 
+      "endDate": "2017-03-17T09:44:10.711767+02:00"
+    }, 
     "value": {
       "currency": "UAH", 
-      "amount": 475000.0, 
+      "amount": 238.0, 
       "valueAddedTaxIncluded": true
     }, 
-    "awardID": "1104a7818f694cbf8ddbcaa6298a5797", 
-    "id": "85803e1ec7d84d1389aac86557c80d55", 
+    "awardID": "372b1fb5209141be957af8f005d0f650", 
+    "id": "560d90d290b54d1a8f7b015bccc1f9ec", 
     "contractID": "UA-2016-03-17-000001-1"
   }
 }
